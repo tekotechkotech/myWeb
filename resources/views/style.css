@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background: #222327;
+}
+
+.navigation{
+    position:relative;
+    width:100%;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#333;
+    border-radius:10px 10px 0px 0px;
+}
+.navigation ul{
+    position:relative;
+    display:flex;
+    width:280px;
+}
+
+
+.navigation ul li{
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    list-style:none;
+    width:70px;
+    height:70px;
+    z-index:1;
+}
+
+.navigation ul li a{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:100%;
+    text-align:center;
+    font-weight:500
+}
+
+.navigation ul li a .icon{
+    position:relative;
+    display:block;
+    font-size:1.5em;
+    line-height:75px;
+    transition:0.5s;
+    color:rgba(255,255,255,0.5);
+}
+
+.navigation ul li.active a .icon{
+    transform:translateY(-8px);
+    color:#29fd53;
+}
+
+.navigation ul li a .text{
+    position:absolute;
+    opacity:0;
+    font-weight:600;
+    font-size:0.5em;
+    color:#222327;
+    transition:0.5s;
+    letter-spacing:0,05em;
+    text-transform:uppercase;
+    transform:translateY(0px);
+}
+.navigation ul li.active a .text{
+    transform:translateY(13px);
+    opacity:1;
+}
+
+.indicator{
+    position:absolute;
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.5s;
+}
+
+.indicator::before{
+    content:'';
+    position:absolute;
+    bottom:13px;
+    width:80%;
+    height:14px;
+    background:#29fd53;
+    border-radius:10px
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator{
+    transform:translateX(calc(70px*1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    transform:translateX(calc(70px*2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    transform:translateX(calc(70px*3));
+}
+
+.navigation {
+    display: flex;
+}
+
+/* Tampilkan menu pada mobile dan tablet (maksimal 768px) */
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+}
+
+body {
+    background-color: lightblue;
+  }
+  
+  @media screen and (min-width: 400px) {
+    body {
+      background-color: lightgreen;
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    body {
+      background-color: lavender;
+    }
+  }
