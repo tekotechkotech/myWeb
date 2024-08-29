@@ -12,7 +12,9 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id');
             $table->string('degree');
+            $table->string('major');
             $table->string('institution');
+            $table->string('address');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->text('description')->nullable();

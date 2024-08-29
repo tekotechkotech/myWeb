@@ -25,6 +25,11 @@
                         <input type="text" class="form-control" id="company_name" @if($this->delete==true) disabled @endif wire:model="experience.company_name">
                         @error('experience.company_name') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label"><Address></Address></label>
+                        <input type="text" class="form-control" id="address" @if($this->delete==true) disabled @endif wire:model="experience.address">
+                        @error('experience.address') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
 
                     <div class="mb-3">
                         <label for="category" class="form-label">Category</label>

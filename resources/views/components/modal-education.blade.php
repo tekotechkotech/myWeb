@@ -19,11 +19,22 @@
                         <input type="text" class="form-control" id="degree" @if($this->delete==true) disabled @endif wire:model="education.degree">
                         @error('education.degree') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+                    <div class="mb-3">
+                        <label for="major" class="form-label">Major</label>
+                        <input type="text" class="form-control" id="major" @if($this->delete==true) disabled @endif wire:model="education.major">
+                        @error('education.major') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
                 
                     <div class="mb-3">
                         <label for="institution" class="form-label">Institution</label>
                         <input type="text" class="form-control" id="institution" @if($this->delete==true) disabled @endif wire:model="education.institution">
                         @error('education.institution') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" @if($this->delete==true) disabled @endif wire:model="education.address">
+                        @error('education.address') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
                 
                     <div class="mb-3">

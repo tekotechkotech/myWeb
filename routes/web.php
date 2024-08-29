@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDFController;
 use App\Livewire\Auth\Login;
 use App\Livewire\Home;
 use App\Livewire\User;
@@ -37,6 +38,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 Route::get('/login', Login::class)->name('login');
 
 Route::get('/',Home::class)->name('home');
+Route::get('/my-cv', [PDFController::class, 'generateCV'])->name('my-cv');
 
 Route::get('/project/{id}',Project::class)->name('project');
 Route::get('/blog/{id}',Blog::class)->name('blog');
@@ -57,6 +59,7 @@ Route::get('/about-me',About::class)->name('about');
         Route::get('/project',AProject::class)->name('project');
         Route::get('/skill',ASkill::class)->name('skill');
         Route::get('/social',ASocial::class)->name('social');
+
 
     });
 // });

@@ -27,6 +27,7 @@ class AExperience extends Component
             'id' => '',
             'job_title' => '',
             'company_name' => '',
+            'address' => '',
             'category' => '',
             'start_date' => '',
             'end_date' => '',
@@ -49,6 +50,7 @@ class AExperience extends Component
                 'id' => $e->id,
                 'job_title' => $e->job_title,
                 'company_name' => $e->company_name,
+                'address' => $e->address,
                 'category' => $e->category,
                 'start_date' => $e->start_date,
                 'end_date' => $e->end_date,
@@ -65,6 +67,7 @@ class AExperience extends Component
         $validatedData = $this->validate([
             'experience.job_title' => 'required|string',
             'experience.company_name' => 'required|string',
+            'experience.address' => 'required|string',
             'experience.category' => 'nullable|string',
             'experience.start_date' => 'nullable|date',
             'experience.end_date' => 'nullable|date',

@@ -18,11 +18,12 @@ class EducationFactory extends Factory
      */
     public function definition(): array
     {
-        $a = User::first()->id;
+        $a = User::orderBy('created_at','ASC')->first()->id;
         return [
             'id' => Str::uuid(),
             'user_id' => $a,
             'degree' => $this->faker->randomElement(['Bachelor', 'Master', 'PhD', 'Associate']),
+            'major' => $this->faker->randomElement(['Informatics Engineering', 'Informatics System', 'Cyber Scurity']),
             'institution' => $this->faker->randomElement([
                 'Harvard University',
                 'Stanford University',
@@ -33,6 +34,7 @@ class EducationFactory extends Factory
                 'Princeton University',
                 'University of California, Berkeley',
             ]),
+            'address' => $this->faker->address(),
             'start_date' => $this->faker->date(),
             'end_date' => $this->faker->date('Y-m-d', 'now'),
             'description' => $this->faker->paragraph(),

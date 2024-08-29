@@ -13,6 +13,7 @@ return new class extends Migration
             $table->uuid('user_id');
             $table->string('job_title');
             $table->string('company_name');
+            $table->string('address');
             $table->string('category')->nullable(); // Menambahkan kolom category
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();

@@ -18,7 +18,7 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
-        $a = User::first()->id;
+        $a = User::orderBy('created_at','ASC')->first()->id;
         return [
             'id' => Str::uuid(),
             'user_id' => $a,

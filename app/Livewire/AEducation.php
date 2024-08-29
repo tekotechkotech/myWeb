@@ -26,7 +26,9 @@ class AEducation extends Component
         $this->education = [
             'id' => '',
             'degree' => '',
+            'major' => '',
             'institution' => '',
+            'address' => '',
             'start_date' => '',
             'end_date' => '',
             'description' => '',
@@ -48,7 +50,9 @@ class AEducation extends Component
             $this->education = [
                 'id' => $e->id,
                 'degree' => $e->degree,
+                'major' => $e->major,
                 'institution' => $e->institution,
+                'address' => $e->address,
                 'start_date' => $e->start_date,
                 'end_date' => $e->end_date,
                 'description' => $e->description,
@@ -64,7 +68,9 @@ class AEducation extends Component
     {
         $validatedData = $this->validate([
             'education.degree' => 'required|string',
+            'education.major' => 'required|string',
             'education.institution' => 'required|string',
+            'education.address' => 'required|string',
             'education.start_date' => 'nullable|date',
             'education.end_date' => 'nullable|date',
             'education.description' => 'nullable|string',
