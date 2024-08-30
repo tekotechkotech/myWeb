@@ -25,6 +25,31 @@
                         <input type="text" class="form-control" id="institution" @if($this->delete==true) disabled @endif wire:model="certification.institution">
                         @error('certification.institution') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+
+                    <div class="mb-3">
+                        <label for="number" class="form-label">Number</label>
+                        <input type="text" class="form-control" id="number" @if($this->delete==true) disabled @endif wire:model="certification.number">
+                        @error('certification.number') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="category" @if($this->delete==true) disabled @endif wire:model="certification.category">
+                        @error('certification.category') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">description</label>
+                        <input type="text" class="form-control" id="description" @if($this->delete==true) disabled @endif wire:model="certification.description">
+                        @error('certification.description') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="mb-3">
+                        <div class="" wire:ignore>
+
+                            <label for="summernote" class="form-label">Description</label>
+                            <textarea class="form-control" id="summernote" @if($this->delete==true) disabled @endif wire:modellazy="certification.description"> </textarea>
+                            @error('certification.description') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
                 
                     <div class="mb-3">
                         <label for="issue_date" class="form-label">Issue Date</label>
@@ -62,4 +87,22 @@
             modal?.hide();
         });
     </script>
+
+
+<script>
+    $('#summernote').summernote({
+      placeholder: 'Hello stand alone ui',
+      tabsize: 2,
+      height: 120,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    });
+  </script>
 @endpush

@@ -18,12 +18,15 @@ class CertificationFactory extends Factory
      */
     public function definition(): array
     {
-        $a = User::orderBy('created_at','ASC')->first()->id;
+        $a = User::first()->id;
         return [
             'id' => Str::uuid(),
             'user_id' => $a,
             'certification_name' => $this->faker->sentence(),
             'institution' => $this->faker->company(),
+            'number' => $this->faker->randomNumber(),
+            'category' => $this->faker->randomNumber(),
+            'description' => $this->faker->paragraph(),
             'issue_date' => $this->faker->date(),
             'expiry_date' =>  $this->faker->date('Y-m-d', 'now'),
         ];

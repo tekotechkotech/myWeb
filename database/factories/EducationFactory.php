@@ -18,7 +18,7 @@ class EducationFactory extends Factory
      */
     public function definition(): array
     {
-        $a = User::orderBy('created_at','ASC')->first()->id;
+        $a = User::first()->id;
         return [
             'id' => Str::uuid(),
             'user_id' => $a,
@@ -33,6 +33,13 @@ class EducationFactory extends Factory
                 'Yale University',
                 'Princeton University',
                 'University of California, Berkeley',
+            ]),
+            'point' => $this->faker->randomElement([
+                '3.55/4.00',
+                '4.0/4.0',
+                '3.56/4.00',
+                '3.75/4.00',
+                '3.95/4.00',
             ]),
             'address' => $this->faker->address(),
             'start_date' => $this->faker->date(),

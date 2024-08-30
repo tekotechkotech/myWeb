@@ -12,7 +12,10 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id');
             $table->string('certification_name');
+            $table->string('category');
+            $table->string('number');
             $table->string('institution');
+            $table->text('description')->nullable();
             $table->date('issue_date')->nullable();
             $table->date('expiry_date')->nullable();
             $table->timestamps();

@@ -29,6 +29,9 @@ class ACertification extends Component
             'id' => '',
             'certification_name' => '',
             'institution' => '',
+            'number' => '',
+            'category' => '',
+            'description' => '',
             'issue_date' => '',
             'expiry_date' => '',
         ];
@@ -50,6 +53,9 @@ class ACertification extends Component
                 'id' => $c->id,
                 'certification_name' => $c->certification_name,
                 'institution' => $c->institution,
+                'number' => $c->number,
+                'category' => $c->category,
+                'description' => $c->description,
                 'issue_date' => $c->issue_date,
                 'expiry_date' => $c->expiry_date,
             ];
@@ -61,6 +67,9 @@ class ACertification extends Component
                 'id' => '',
                 'certification_name' => '',
                 'institution' => '',
+                'number' => '',
+                'category' => '',
+                'description' => '',
                 'issue_date' => '',
                 'expiry_date' => '',
             ];
@@ -75,6 +84,9 @@ class ACertification extends Component
         $validatedData = $this->validate([
             'certification.certification_name' => 'required|string',
             'certification.institution' => 'required|string',
+            'certification.number' => 'required|string',
+            'certification.category' => 'required|string',
+            'certification.description' => 'required|string',
             'certification.issue_date' => 'nullable|date',
             'certification.expiry_date' => 'nullable|date',
         ]);

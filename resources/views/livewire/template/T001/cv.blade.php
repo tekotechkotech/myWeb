@@ -86,7 +86,7 @@
         <span>{{ $user->phone }} </span> | <span> {{ $user->email }} </span> | <span> {{ $user->web }}</span><br>
         <span>{{ $user->address }}</span>
     </div>
-    <p class="summary">{{ $user->profile_summary }}</p>
+    <p class="summary">{!! $user->profile_summary !!}</p>
 
 
 
@@ -110,7 +110,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    {{ $education->description }}
+                    {!! $education->description !!}
                 </td>
             </tr>
         </table>
@@ -138,12 +138,38 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    {{ $experience->description }}
+                    {!! $education->description !!}
                 </td>
             </tr>
         </table>
 
         @endforeach
+        @endif
+        {{-- </div> --}}
+
+    {{-- <div class="section"> --}}
+        <div class="section-title">CERTIFICATE</div>
+        <hr>
+        @if($user->certificates->isEmpty())
+        <p class="text-center">No CERTIFICATE available.</p>
+        @else
+            @foreach($user->certificates as $certificate)
+            <table style="width: 100%; margin-bottom:10px" class="table">
+                <tr>
+                    <td class="text-bold text-left">{{ $certificate->institution }}</td> <td class="text-bold text-right">{{ $certificate->company_name }}</td>
+                </tr>
+                <tr>
+                    <td class=" text-left">{{ $certificate->certification_name }}, {{ $certificate->category }}</td>
+                    <td class=" text-right">Nomor: {{ $certificate->number }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        {!! $education->description !!}
+                    </td>
+                </tr>
+            </table>
+
+            @endforeach
         @endif
         {{--
     </div> --}}
@@ -156,21 +182,20 @@
         <p class="text-center">No skills available.</p>
         @else
         <table style=" margin-bottom:10px">
-        @foreach($user->skills->groupBy('category') as $category => $skillsGroup)
-            <tr>
-                <td class="text-bold text-left" >{{ $category }}</td>
-                <td>:</td>
-                <td class="text-left">
-                    @foreach($skillsGroup as $skillnya)
-                    {{ $skillnya->skill_name }},
-                    @endforeach
-                </td>
-            </tr>
+            @foreach($user->skills->groupBy('category') as $category => $skillsGroup)
+                <tr>
+                    <td class="text-bold text-left" style="width:180px" >{{ $category }}</td>
+                    <td>:</td>
+                    <td class="text-left">
+                        @foreach($skillsGroup as $skillnya)
+                        {{ $skillnya->skill_name }},
+                        @endforeach
+                    </td>
+                </tr>
             @endforeach
         </table>
         @endif
-        {{--
-    </div> --}}
+    {{--  </div> --}}
 
 
 </body>

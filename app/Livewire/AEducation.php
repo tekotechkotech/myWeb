@@ -70,6 +70,7 @@ class AEducation extends Component
             'education.degree' => 'required|string',
             'education.major' => 'required|string',
             'education.institution' => 'required|string',
+            'education.point' => 'required|string',
             'education.address' => 'required|string',
             'education.start_date' => 'nullable|date',
             'education.end_date' => 'nullable|date',

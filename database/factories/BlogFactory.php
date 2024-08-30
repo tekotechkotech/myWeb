@@ -18,7 +18,7 @@ class BlogFactory extends Factory
      */
     public function definition(): array
     {
-        $a = User::orderBy('created_at','ASC')->first()->id;
+        $a = User::first()->id;
         return [
             'id' => Str::uuid(),
             'user_id' => $a,

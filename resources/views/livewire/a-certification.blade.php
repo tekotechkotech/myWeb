@@ -51,4 +51,7 @@
 
         @endif
     </div>
+    @push('script')
+        
+    @endpush
 </div>

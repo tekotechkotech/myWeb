@@ -92,4 +92,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Education::class);
     }
+    /**
+     * Get all of the user's expertises.
+     */
+    public function certificates(): HasMany
+    {
+        return $this->hasMany(Certification::class);
+    }
 }

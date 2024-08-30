@@ -24,6 +24,11 @@
                         <input type="text" class="form-control" id="major" @if($this->delete==true) disabled @endif wire:model="education.major">
                         @error('education.major') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+                    <div class="mb-3">
+                        <label for="point" class="form-label">P oint</label>
+                        <input type="text" class="form-control" id="point" @if($this->delete==true) disabled @endif wire:model="education.point">
+                        @error('education.point') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
                 
                     <div class="mb-3">
                         <label for="institution" class="form-label">Institution</label>

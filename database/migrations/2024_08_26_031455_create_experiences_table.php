@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('address');
             $table->string('category')->nullable(); // Menambahkan kolom category
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
+            $table->string('start_date')->nullable();
+            $table->string('end_date')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
 
