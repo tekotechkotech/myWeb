@@ -16,6 +16,7 @@ return new class extends Migration
             $table->uuid('user_id');
             $table->string('blog_title');
             $table->string('slug');
+            $table->string('img')->nullable();
             $table->text('content');
             $table->timestamps();
 

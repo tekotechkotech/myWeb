@@ -1,25 +1,61 @@
 <div>
-    
+
     @include('livewire.template.T001.header-footer')
 
-    <div class="container p-3">
-<h1>{{ $user->name }}</h1>
-<p>{{ $user->email }}</p>
-<p>{{ $user->phone }}</p>
-<p>{{ $user->address }}</p>
-{{-- <p>{{ $user->email }}</p>
-<p>{{ $user->email }}</p> --}}
-Skill
-@foreach ($skills as $skill)
-<div class="card">
-    <div class="card-body">
+    <div class="container px-3">
+        <div class="card">
+            <div class="card-body">
 
-        <span>{{ $skill->skill_name }}</span>
+                <h1>{{ $usernya->name }}</h1>
+                <table class="table">
+                    <tr>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            {{ $usernya->email }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Phone
+                        </td>
+                        <td>
+                            {{ $usernya->phone }}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Address
+                        </td>
+                        <td>
+                            {{ $usernya->address }}
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+                <p>{{ $usernya->profile_summary }}</p>
+
+
+                <h5>
+                    SKILLS
+                </h5>
+                <table style=" margin-bottom:10px">
+                    @foreach($usernya->skills->groupBy('category') as $category => $skillsGroup)
+                    <tr>
+                        <td class="text-bold text-left" style="width:210px">{{ $category }}</td>
+                        <td>:</td>
+                        <td class="text-left">
+                            @foreach($skillsGroup as $skillnya)
+                            {{ $skillnya->skill_name }},
+                            @endforeach
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-@endforeach
-
-        
-    </div>
-
-</div>

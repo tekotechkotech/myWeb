@@ -1,34 +1,43 @@
 <div>
-    
-    @include('livewire.template.T001.header-footer')
 
-    <div class="container p-3">
-<h1>My Portfolio</h1>
-<p>project yg pernah saya buat</p>
-@foreach ($ports as $port)
-<div class="card m-2 w-100" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{ $port->project_name }}</h5>
-      
-      nama cuma judul
-      Deskripsi panjang
-      
-      visit web
-      repository
+  @include('livewire.template.T001.header-footer')
+<style>
+  .mobile-view {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .pc-view {
+        display: none;
+    }
+    .mobile-view {
+        display: block;
+    }
+}
+</style>
+  <div class="container px-3">
+    <h1>My Portfolio</h1>
+    <p>Project yg pernah ku buat ku</p>
 
 
-      Project Overview
-      - tambah
-      - subtitle
-      - slogan
-      - role
-      - teknologi
-
+    <div class="row w-100">
+      @foreach ($ports as $blog)
+      <div class="col col-lg-3 col-md-3 col-sm-12">
+        {{-- <a  class="text-left btn"> --}}
+          <a href="/project/{{ $blog->project_name }}" class="btn p-0 card m-2 w-100" >
+            <img src="{{ $blog->img ? asset('img/portfolio/'.$blog->img):asset('img/nia.jpg') }}" class="card-img-top" style="height: 150px" >
+            <div class="card-body">
+              <h5 class="card-title">{{ $blog->project_name }}</h5>
+            </div>
+          </a>
+        {{-- </a> --}}
+      </div>
+      @endforeach
     </div>
+
+
+
+
   </div>
-@endforeach
-
-    </div>
 
 </div>

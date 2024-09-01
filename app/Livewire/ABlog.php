@@ -15,7 +15,7 @@ class ABlog extends Component
 
     protected $listeners = ['closeModal'];
 
-    public function mount()
+    public function mount($id)
     {
         $this->delete = false;
         $this->resetBlog();

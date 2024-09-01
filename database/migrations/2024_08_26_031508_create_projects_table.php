@@ -12,8 +12,11 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('user_id');
             $table->string('project_name');
+            $table->string('img')->nullable();
             $table->text('description')->nullable();
+            $table->string('repository')->nullable();
             $table->string('url')->nullable();
+            $table->string('tech')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

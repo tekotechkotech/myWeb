@@ -8,15 +8,23 @@ use Livewire\Component;
 class Project extends Component
 {
     public $ports;
+    public $id;
     public function mount($id) {
         
-        if ($id=='null') {
-            $id=null;
-        }
+        // dd($id);
+        $this->id = $id;
     }
+
     public function render()
     {
-        $this->ports = ModelsProject::get();
-        return view('livewire.template.T001.project');
+        // dd($this->id);
+        if ($this->id !== 'null') {
+            $this->ports = ModelsProject::where('project_name', $this->id)->first();
+            return view('livewire.template.T001.project-detail');
+            
+        } else {
+            $this->ports = ModelsProject::get();
+            return view('livewire.template.T001.project');
+        }
     }
 }

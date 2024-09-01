@@ -26,7 +26,10 @@
         }
 
         .section {
-            margin-bottom: 20px;
+            page-break-inside: avoid;
+            
+            padding: 0px;
+            margin: 0px;
         }
 
         .section-title {
@@ -77,35 +80,38 @@
             margin-bottom: 0px;
             margin-top: 0px;
         }
+        ul,li {
+            margin-top: 0px;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <h1>{{ strtoupper($user->name) }}</h1>
+        <h1>{{ strtoupper($usernya->name) }}</h1>
         <span>{{ $user->phone }} </span> | <span> {{ $user->email }} </span> | <span> {{ $user->web }}</span><br>
         <span>{{ $user->address }}</span>
     </div>
-    <p class="summary">{!! $user->profile_summary !!}</p>
+    <p class="summary">A dedicated Fullstack Developer with over 4 years of experience in creating robust and scalable web applications using Laravel.{!! $user->profile_summary !!}</p>
 
 
 
 
 
-    {{-- <div class="section"> --}}
+    <div class="section">
         <div class="section-title">EDUCATION</div>
         <hr>
         @if($user->educations->isEmpty())
         <p class="text-center">No EDUCATION available.</p>
         @else
         @foreach($user->educations as $education)
-        <table style="width: 100%; margin-bottom:10px" class="table">
+        <table style="width: 100%; margin-bottom:0px" class="table">
             <tr>
                 <td class="text-bold text-left">{{ $education->institution }}</td>
                 <td class="text-bold text-right">{{ $education->address }}</td>
             </tr>
             <tr>
-                <td class=" text-left">{{ $education->degree }} in {{ $education->major }}</td>
+                <td class=" text-left">{{ $education->degree }} in {{ $education->major }} | GPA: {{ $education->point }}</td>
                 <td class=" text-right">{{ $education->start_date }} - {{ $education->end_date }}</td>
             </tr>
             <tr>
@@ -117,37 +123,37 @@
 
         @endforeach
         @endif
-        {{--
-    </div> --}}
+        
+    </div>
 
-    {{-- <div class="section"> --}}
+    <div class="section">
         <div class="section-title">EXPERIENCE</div>
         <hr>
         @if($user->experiences->isEmpty())
         <p class="text-center">No experiences available.</p>
         @else
-        @foreach($user->experiences as $experience)
+        @foreach($user->experiences->sortByDesc('end_date') as $experience)
         <table style="width: 100%; margin-bottom:10px" class="table">
             <tr>
                 <td class="text-bold text-left">{{ $experience->company_name }}</td>
                 <td class="text-bold text-right">{{ $experience->company_name }}</td>
             </tr>
             <tr>
-                <td class=" text-left">{{ $experience->job_title }}</td>
-                <td class=" text-right">{{ $experience->start_date }} - {{ $experience->end_date }}</td>
+                <td class=" text-left">{{ $experience->job_title }}, {{ $experience->category }}</td>
+                <td class=" text-right">{{ \Carbon\Carbon::parse($experience->start_date)->format('F Y') }} - {{ $experience->end_date=="Present"?"$experience->end_date":\Carbon\Carbon::parse($experience->end_date)->format('F Y') }}</td>
             </tr>
             <tr>
                 <td colspan="2">
-                    {!! $education->description !!}
+                    {!! $experience->description !!}
                 </td>
             </tr>
         </table>
 
         @endforeach
         @endif
-        {{-- </div> --}}
+        </div>
 
-    {{-- <div class="section"> --}}
+    <div class="section">
         <div class="section-title">CERTIFICATE</div>
         <hr>
         @if($user->certificates->isEmpty())
@@ -164,19 +170,19 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        {!! $education->description !!}
+                        {!! $certificate->description !!}
                     </td>
                 </tr>
             </table>
 
             @endforeach
         @endif
-        {{--
-    </div> --}}
+        
+    </div>
 
 
-    {{-- <div class="section"> --}}
-        <div class="section-title">SKILLS</div>
+    <div class="section">
+        <div class="section-title">SKILL</div>
         <hr>
         @if($user->skills->isEmpty())
         <p class="text-center">No skills available.</p>
@@ -195,7 +201,7 @@
             @endforeach
         </table>
         @endif
-    {{--  </div> --}}
+     </div>
 
 
 </body>
