@@ -17,7 +17,7 @@
 </style>
   <div class="container px-3">
     <h1>My Portfolio</h1>
-    <p>Project yg pernah ku buat ku</p>
+    <p>lets see my portfolio</p>
 
 
     <div class="row w-100">

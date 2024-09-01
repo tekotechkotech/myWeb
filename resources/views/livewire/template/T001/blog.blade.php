@@ -17,7 +17,7 @@
 </style>
   <div class="container px-3">
     <h1>My Blogs</h1>
-    <p>Artikel ku</p>
+    <p>Here are my scribbles</p>
 
 <div class="row w-100">
   @foreach ($blogs as $blog)
