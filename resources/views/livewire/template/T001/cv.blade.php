@@ -92,7 +92,7 @@
         <span>{{ $user->phone }} </span> | <span> {{ $user->email }} </span> | <span> {{ $user->web }}</span><br>
         <span>{{ $user->address }}</span>
     </div>
-    <p class="summary">A dedicated Fullstack Developer with over 4 years of experience in creating robust and scalable web applications using Laravel.{!! $user->profile_summary !!}</p>
+    <p class="summary">I have over {{ \Carbon\Carbon::parse($usernya->expertises->where('show','show')->first()->start_date)->diffInYears(\Carbon\Carbon::now()) }} years of experience in {{ $usernya->expertises->where('show','show')->first()->expertise_name }}. {!! $user->profile_summary !!}</p>
 
 
 
