@@ -15,7 +15,7 @@
         <div class="">
             <span>
                 
-    <img src="https://via.placeholder.com/100" alt="No Profile" class="profile-pic">
+    <img src="https://t4.ftcdn.net/jpg/05/89/93/27/360_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.webp" alt="No Profile" class="profile-pic">
             </span>
         </div>
     </div>
