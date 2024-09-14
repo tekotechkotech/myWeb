@@ -1,10 +1,21 @@
 @push('navbar-header')
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    <style>
+        .profile-pic {
+            width: 30px; /* Ukuran lingkaran */
+            height: 30px; /* Ukuran lingkaran */
+            border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+            object-fit: cover; /* Menjaga proporsi gambar */
+            border: 2px solid #ccc; /* Border lingkaran */
+        }
+    </style>
     <div class="container">
         <a class="navbar-brand" href="#">faiz-ag.com</a>
         <div class="">
             <span>
-                Siapa
+                
+    <img src="https://t4.ftcdn.net/jpg/05/89/93/27/360_F_589932782_vQAEAZhHnq1QCGu5ikwrYaQD0Mmurm0N.webp" alt="No Profile" class="profile-pic">
             </span>
         </div>
     </div>
@@ -40,6 +51,11 @@
         </svg></a>
 </div>
 <br><br><br><br>
+<style>
+    small{
+        font-size: 8pt;
+    }
+</style>
 <div class="fixed-bottom">
     <nav class="navbar  navbar-expand-lg bg-body-tertiary">
         <div class="container w-100 ">
@@ -48,7 +64,8 @@
                 <div class="col-3">
                     <a href="{{ route('home') }}" class=" btn btn-{{ request()->routeIs('home')?"":" outline-" }}light
                         py-3 d-block w-100" style="border-radius: 10px">
-                        Home
+                        <i class="fas fa-igloo p-1"></i><br>
+                        <small>Home</small>
                     </a>
                 </div>
 
@@ -56,21 +73,24 @@
                     <a href="{{ route('project',['id'=>'null']) }}"
                         class=" btn btn-{{ request()->routeIs('project')?"":" outline-" }}light py-3 d-block w-100"
                         style="border-radius: 10px">
-                        Portfolio
+                        <i class="fas fa-microchip p-1"></i><br>
+                        <small>Portfolio</small>
                     </a>
                 </div>
 
                 <div class="col-3">
                     <a href="{{ route('blog',['id'=>'null']) }}" class=" btn btn-{{ request()->routeIs('blog')?"":"
                         outline-" }}light py-3 d-block w-100" style="border-radius: 10px">
-                        Blog
+                        <i class="fab fa-hive p-1"></i><br>
+                        <small>Blog</small>
                     </a>
                 </div>
 
                 <div class="col-3">
                     <a href="{{ route('about') }}" class=" btn btn-{{ request()->routeIs('about')?"":" outline-" }}light
                         py-3 d-block w-100" style="border-radius: 10px">
-                        About
+                        <i class="fas fa-id-badge p-1"></i><br>
+                        <small>About</small>
                     </a>
                 </div>
 
